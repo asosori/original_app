@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
               <li class="nav-item">
-                <%= link_to "口コミ投稿", "#", class: "nav-link" %>
+                <%= link_to "口コミ投稿", current_user, class: "nav-link" %>
               </li>
             <% if user_signed_in? %>
               <li class="nav-item">
