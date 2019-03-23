@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @post = current_user.posts.first
   end
 
   

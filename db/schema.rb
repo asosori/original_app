@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_092334) do
+ActiveRecord::Schema.define(version: 2019_03_23_065058) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string "university", null: false
+    t.string "department", null: false
+    t.string "major", null: false
+    t.string "professor", null: false
+    t.text "detail", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

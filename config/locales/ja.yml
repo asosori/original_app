@@ -9,12 +9,20 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       user: ユーザー
+      post: 投稿
     attributes:
       user:
         username: ユーザー名
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認欄
+      post:
+        university: 大学
+        department: 学部
+        major: 学科
+        professor: 教授名
+        detail: 詳細
+        user_id: 一人のユーザー
   date:
     abbr_day_names:
     - 日
@@ -137,7 +145,7 @@ ja:
       other_than: は%{count}以外の値にしてください
       present: は入力しないでください
       required: を入力してください
-      taken: はすでに存在します
+      taken: が投稿できる口コミは一つまでです
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
