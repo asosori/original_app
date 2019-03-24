@@ -1,5 +1,25 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :correct_postuser, only: [:edit, :update, :destroy]
+
+  def correct_postuser
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      flash[:danger] = "権限がありません"
+      redirect_to root_url
+    end
+  end
+
+  def search
+    if params[:q][:university_cont].empty? && params[:q][:department_cont].empty? && params[:q][:major_cont].empty? && params[:q][:professor_cont].empty?
+      flash[:alert] = "検索項目を入力してください"
+      redirect_to root_url
+    else
+      @q = Post.ransack(params[:q])
+      @posts = @q.result.includes(:user)
+    end
+  end
+
   def index
     
   end
@@ -25,11 +45,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "編集が完了しました"
       redirect_to @post
@@ -39,7 +57,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy
+    @post.destroy
     redirect_to current_user
   end
 
@@ -48,4 +66,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:university, :department, :major, :professor, :detail)
   end
+
 end

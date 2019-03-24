@@ -1,6 +1,14 @@
-<h1>口コミから選ぶゼミ＆研究室</h1>
-<p>実際に所属していた学生の口コミを見ることができます。</p>
-
+<% if @posts.first %>
+  <h1>検索結果</h1>
+  <% @posts.each do |post| %>
+    <p><%= post.user.username %>さんによる</p>
+    <p><%= post.university %><%= post.department %><%= post.major %><%= post.professor %>研究室の口コミ</p>
+    <p><%= post.detail %>
+    <p><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+  <% end %>
+  <%= link_to "トップページへ", root_path %>
+<% else %>
+  <p>該当する口コミは見つかりませんでした。</p>
   <%= search_form_for @q, url: search_posts_path, class: "form-inline my-2 my-lg-0" do |f| %>
     <p>大学</p>
     <%= f.search_field :university_cont, class: "form-control mr-sm-2" %>
@@ -12,4 +20,4 @@
     <%= f.search_field :professor_cont, class: "form-control mr-sm-2" %>
     <%= f.submit "検索する", class: "btn btn-info my-2 my-sm-0" %>
   <% end %>
-
+<% end %>
