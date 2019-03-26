@@ -2,6 +2,17 @@
 <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
 <%= link_to "研究室の口コミを投稿する", new_post_path %>
 <h2>いいねした口コミ</h2>
+  
+  <% @posts.each do |post| %>
+    <div id="post-<%= post.id %>" data-post-id="<%= post.id %>">
+      <p><%= post.user.username %>さんによる</p>
+      <p><%= post.university %><%= post.department %><%= post.major %><%= post.professor %>研究室の口コミ</p>
+      <p><%= post.detail.truncate(100) %>
+      <%= link_to "詳しく見る", post %>
+        <%= render "likes/like", post: post %>
+      <p><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+    </div>
+  <% end %>
 <h2>自分が投稿した口コミ</h2>
 <% if @post %>
   <%= @post.university %>

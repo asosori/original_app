@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       redirect_to root_url
     else
       @q = Post.ransack(params[:q])
-      @posts = @q.result.includes(:user)
+      @posts = @q.result.includes(:user, :like_users, :likes)
     end
   end
 

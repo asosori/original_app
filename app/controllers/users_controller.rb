@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @post = current_user.posts.first
+    @posts = current_user.like_posts.includes(:user, :like_users, :likes)
   end
 
   
