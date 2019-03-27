@@ -1,0 +1,11 @@
+<%= search_form_for @q, url: search_posts_path, class: "form-inline my-2 my-lg-0" do |f| %>
+  <p>大学</p>
+  <%= f.search_field :university_cont, class: "form-control mr-sm-2" %>
+  <p>学部</p>
+  <%= f.search_field :department_cont, class: "form-control mr-sm-2" %>
+  <p>学科</p>
+  <%= f.search_field :major_cont, class: "form-control mr-sm-2" %>
+  <p>教授名(名字のみでも可)</p>
+  <%= f.search_field :professor_cont, class: "form-control mr-sm-2" %>
+  <%= f.submit "検索する", class: "btn btn-info my-2 my-sm-0" %>
+<% end %>

@@ -1,0 +1,8 @@
+<div id="post-<%= post.id %>" data-post-id="<%= post.id %>">
+  <p><%= post.user.username %>さんによる</p>
+  <p><%= post.university %><%= post.department %><%= post.major %><%= post.professor %>研究室の口コミ</p>
+  <p><%= post.detail.truncate(100) %>
+  <%= link_to "詳しく見る", post %>
+    <%= render "likes/like", post: post %>
+  <p><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+</div>

@@ -1,30 +1,4 @@
-<%= form_with model: @post, local: true do |form| %>
-  <%= render "shared/errors", obj: @post %>
+<% provide(:button_text, '口コミを編集する') %>
+<h1>口コミ編集</h1>
 
-  <div class="form-group">
-    <%= form.label :university, "大学(正式名称で)" %>
-    <%= form.text_field :university, class: "form-control", placeholder: "早稲田 ×、早稲田大学 OK" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :department, "学部(正式名称で)" %>
-    <%= form.text_field :department, class: "form-control", placeholder: "理工 ×、理工学部 OK" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :major, "学科(正式名称で)" %>
-    <%= form.text_field :major, class: "form-control", placeholder: "機械工 ×、機械工学科 OK" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :professor, "教授名(できたらフルネームで)" %>
-    <%= form.text_field :professor, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :detail, "詳細" %>
-    <%= form.text_area :detail, rows: 10, class: "form-control", placeholder: "コアタイムや教授の性格なども書いていただけると幸いです。" %>
-  </div>
-
-  <%= form.submit "編集する", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form' %>

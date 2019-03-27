@@ -10,14 +10,14 @@ class LikesController < ApplicationController
   end
 
   def current_user_is_not_post_user
-    if current_user == Post.find(params[:post_id]).user
+    @post = Post.find(params[:post_id])
+    if current_user == @post.user
       flash[:danger] = "自分で作成した投稿なので、この機能は利用いただけません"
       redirect_back(fallback_location: root_url)
     end
   end
 
   def create
-    @post = Post.find(params[:post_id])
     @post.likes.create(user_id: current_user.id)
     @post.reload
     respond_to do |format|
@@ -27,7 +27,6 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
     @post.likes.find_by(user_id: current_user.id).destroy
     @post.reload
     respond_to do |format|
