@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_230542) do
+ActiveRecord::Schema.define(version: 2019_03_27_050919) do
+
+  create_table "inquiries", force: :cascade do |t|
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false

@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>お問い合わせ内容確認</h1>
+</div>
+
+<%= form_with model: @inquiry, url: inquiries_thanks_path, local: true do |f| %>
+  <table class="table">
+    <tr>
+      <th>メールアドレス</th>
+      <td>
+        <%= f.hidden_field :email %>
+        <%= @inquiry.email %>
+      </td>
+    </tr>
+    <tr>
+      <th>お問い合わせ内容</th>
+      <td>
+        <%= f.hidden_field :message %>
+        <%= simple_format(@inquiry.message) %>
+      </td>
+    </tr>
+  </table>
+
+  <%= f.submit '送信する', :class => 'btn btn-primary' %>
+<% end %>
+
+<%= link_to "お問い合わせを入力し直す", home_inquire_path %>

@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def inquire
+    @inquiry = Inquiry.new
   end
 
 end

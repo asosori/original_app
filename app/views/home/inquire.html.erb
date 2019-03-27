@@ -1,1 +1,19 @@
-<h1>お問い合わせ</h1>
+<%= form_with model: @inquiry, url: home_inquire_path, local: true do |f| %>
+  <div class="page-header">
+    <h1>お問い合わせ</h1>
+  </div>
+ 
+  <%= render "shared/errors", obj: @inquiry %>
+ 
+  <table class="table">
+    <tr>
+      <th>メールアドレス<span class="text-danger">（必須）</span></th>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <th>お問い合わせ内容<span class="text-danger">（必須）</span></th>
+      <td><%= f.text_area :message, size: "50x10" %></td>
+    </tr>
+  </table>
+  <%= f.submit '確認', class: 'btn btn-primary' %>
+<% end %>

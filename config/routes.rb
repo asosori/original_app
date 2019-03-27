@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
   devise_for :users
+  resources :users, :only => [:show]
   root to: 'home#top'
   get "home/inquire"
-  resources :users, :only => [:show]
+  post 'home/inquire' => "inquiries#confirm"
+  post 'inquiries/thanks' 
 end

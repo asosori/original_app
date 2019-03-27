@@ -23,6 +23,9 @@ ja:
         professor: 教授名
         detail: 詳細
         user_id: 一人のユーザー
+      inquiry:
+        email: メールアドレス
+        message: お問い合わせ内容
   date:
     abbr_day_names:
     - 日
