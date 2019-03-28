@@ -2,12 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1{
+.top-page h1{
   text-align: center;
   //color: white;
 }
 
-p{
+.top-page p{
   text-align: center;
+  margin-top: 30px;
   //color: white;
+}
+
+.top-page{
+  margin-top: 80px;
+}
+
+.search-form{
+  margin-top: 70px;
 }

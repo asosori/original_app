@@ -1,11 +1,26 @@
-<%= search_form_for @q, url: search_posts_path, class: "form-inline my-2 my-lg-0" do |f| %>
-  <p>大学</p>
-  <%= f.search_field :university_cont, class: "form-control mr-sm-2" %>
-  <p>学部</p>
-  <%= f.search_field :department_cont, class: "form-control mr-sm-2" %>
-  <p>学科</p>
-  <%= f.search_field :major_cont, class: "form-control mr-sm-2" %>
-  <p>教授名(名字のみでも可)</p>
-  <%= f.search_field :professor_cont, class: "form-control mr-sm-2" %>
-  <%= f.submit "検索する", class: "btn btn-info my-2 my-sm-0" %>
-<% end %>
+<div class="search-form col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1">
+  <%= search_form_for @q, url: search_posts_path, class: "form-block my-2 my-lg-0" do |f| %>
+    
+    <div class="form-group">
+      <%= f.label :university_cont, "大学" %>
+      <%= f.search_field :university_cont, class: "form-control mr-sm-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :department_cont, "学部" %>
+      <%= f.search_field :department_cont, class: "form-control mr-sm-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :major_cont, "学科" %>
+      <%= f.search_field :major_cont, class: "form-control mr-sm-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :professor_cont, "教授名(名字のみでも可)" %>
+      <%= f.search_field :professor_cont, class: "form-control mr-sm-2" %>
+    </div>
+
+    <%= f.submit "検索する", class: "btn btn-info my-2 my-sm-0" %>
+  <% end %>
+</div>

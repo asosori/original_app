@@ -16,7 +16,11 @@ class PostsController < ApplicationController
       redirect_to root_url
     else
       @q = Post.ransack(params[:q])
-      @posts = @q.result.includes(:user, :like_users, :likes)
+      @posts = @q.result.includes(:user, :like_users, :likes).page(params[:page]).per(10)
+      unless @posts.first
+        flash.now[:alert] = "該当する口コミは見つかりませんでした"
+        render template: "home/top"
+      end
     end
   end
 
@@ -35,7 +39,6 @@ class PostsController < ApplicationController
       flash[:success] = "投稿が完了しました"
       redirect_to @post
     else
-      flash.now[:alert] = "投稿に失敗しました"
       render 'new'
     end
   end

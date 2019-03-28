@@ -1,5 +1,5 @@
 <div id="post-<%= @post.id %>" data-post-id="<%= @post.id %>">
-  <h1><%= @post.university %><%= @post.department %><%= @post.major %><%= @post.professor %>研究室の口コミ</h1>
+  <h1><%= @post.university %><%= @post.department %><%= @post.major %><%= @post.professor %>研究室(ゼミ)の口コミ</h1>
   <h2><%= @user.username %>さんによる口コミ</h2>
   <p><%= @post.detail %></p>
   <%= render "likes/like", post: @post %>

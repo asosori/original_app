@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>お問い合わせ内容確認</h1>
+  <h1 class="title mb-5">お問い合わせ内容確認</h1>
 </div>
 
 <%= form_with model: @inquiry, url: inquiries_thanks_path, local: true do |f| %>
@@ -20,7 +20,7 @@
     </tr>
   </table>
 
-  <%= f.submit '送信する', :class => 'btn btn-primary' %>
+  <%= f.submit '送信する', class: 'btn btn-primary mb-3' %>
 <% end %>
 
-<%= link_to "お問い合わせを入力し直す", home_inquire_path %>
+<%= link_to "お問い合わせを入力し直す", home_inquire_path, class: 'btn btn-secondary' %>

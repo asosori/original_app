@@ -1,15 +1,9 @@
-<% if @posts.first %>
+<h1>検索結果</h1>
 
-  <h1>検索結果</h1>
+<%= render @posts %>
 
-  <%= render @posts %>
+<div class="col-12">
+  <%= paginate @posts %>
+</div>
 
-  <%= link_to "トップページへ", root_path %>
-
-<% else %>
-
-  <p>該当する口コミは見つかりませんでした。</p>
-
-  <%= render "shared/search_form" %>
-
-<% end %>
+<%= link_to "トップページへ", root_path %>

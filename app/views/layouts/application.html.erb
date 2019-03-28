@@ -11,9 +11,12 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <%= link_to "ゼミ＆研究室口コミサイト", root_path, class: "navbar-brand" %>
-        <div class="collapse navbar-collapse" id="navbarNav">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <%= link_to "ゼミラボナビ", root_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
               <li class="nav-item">
                 <%= link_to "口コミ投稿", new_post_path, class: "nav-link" %>
