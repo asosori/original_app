@@ -1,0 +1,43 @@
+<div class="row">
+
+  <div class="col-3">
+    <h1 class="title mypage">マイページ</h1>
+    <ul class="nav nav-sidebar mt-5">
+      <li><%= fa_icon("pencil lg") %> <%= link_to "ユーザー情報を編集する", edit_user_registration_path, class: "text-dark ml-2" %></li>
+      <li><%= fa_icon("comment lg") %> <%= link_to "口コミを投稿する", new_post_path, class: "text-dark ml-2" %></li>
+      <li><%= fa_icon("book lg") %> <%= link_to "自分が投稿した口コミ", current_user, class: "text-dark ml-2" %></li>
+    </ul>
+  </div>
+
+  <div class="col-9 mb-5">
+    <h2 class="title">いいねした口コミ</h2>
+    <% if @posts.first %>
+      <% @posts.each do |post| %>
+        <div id="post-<%= post.id %>" data-post-id="<%= post.id %>">
+          <div class="card mt-5">
+            <div class="card-header">
+              <%= post.university %><%= post.department %><%= post.major %><%= post.professor %>研究室(ゼミ)の口コミ
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= post.user.username %>さんによる口コミ</h5>
+              <p class="card-text"><%= post.detail.truncate(100) %></p>
+              <%= render "likes/like", post: post %><br>
+              <p class="date"><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+              <%= link_to '詳しく見る', post, class: "btn btn-primary mt-3" %> 
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-12 mt-5">
+        <%= paginate @posts %>
+      </div>
+    <% else %>
+      <div class="card mt-5">
+        <div class="card-body text-center">
+          いいねした口コミはありません。
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

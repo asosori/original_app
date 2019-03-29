@@ -1,44 +1,35 @@
-<h1 class="title">マイページ</h1>
-<%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
-<%= link_to "研究室(ゼミ)の口コミを投稿する", new_post_path %>
-<h2>いいねした口コミ</h2>
-  
-  <% @posts.each do |post| %>
-    <div id="post-<%= post.id %>" data-post-id="<%= post.id %>">
-      <p><%= post.user.username %>さんによる</p>
-      <p><%= post.university %><%= post.department %><%= post.major %><%= post.professor %>研究室(ゼミ)の口コミ</p>
-      <p><%= post.detail.truncate(100) %>
-      <%= link_to "詳しく見る", post %>
-        <%= render "likes/like", post: post %>
-      <p><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
-    </div>
-  <% end %>
-
-<h2>自分が投稿した口コミ</h2>
-<% if @post %>
-  <%= @post.university %>
-  <%= @post.department %>
-  <%= @post.major %>
-  <%= @post.professor %>
-  <%= @post.detail %>
-  <%= link_to "投稿を編集する", edit_post_path(@post) %>
-  <%= link_to "投稿を削除する", @post, method: :delete, data: { confirm: "本当に削除しますか?" } %>
-<% else%>
-  <p>投稿した口コミはありません</p>
-<% end %>
-
 <div class="row">
-  <div class="col-3 user-index">
-    <h2 class="title">マイページ</h2>
-    <ul class="nav nav-sidebar">
-      <li>ユーザー情報編集</li>
-      <li>口コミを投稿する</li>
-      <li>いいねした口コミ</li>
+
+  <div class="col-3">
+    <h1 class="title mypage">マイページ</h1>
+    <ul class="nav nav-sidebar mt-5">
+      <li><%= fa_icon("pencil lg") %> <%= link_to "ユーザー情報を編集する", edit_user_registration_path, class: "text-dark ml-2" %></li>
+      <li><%= fa_icon("comment lg") %> <%= link_to "口コミを投稿する", new_post_path, class: "text-dark ml-2" %></li>
+      <li><%= fa_icon("heart lg") %> <%= link_to "いいねした口コミ", likes_user_path(current_user), class: "text-dark ml-2" %></li>
     </ul>
   </div>
 
   <div class="col-9">
     <h2 class="title">自分が投稿した口コミ</h2>
+      <% if @post %>
+          <div class="card mt-5">
+            <div class="card-header">
+              <%= @post.university %><%= @post.department %><%= @post.major %><%= @post.professor %>研究室(ゼミ)の口コミ
+            </div>
+            <div class="card-body">
+              <p class="card-text"><%= @post.detail %></p>
+              <p class="date"><%= @post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+              <%= link_to "編集する", edit_post_path(@post), class: "btn btn-primary" %>
+              <%= link_to "削除する", @post, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn btn-secondary" %>
+            </div>
+          </div>
+      <% else%>
+        <div class="card mt-5">
+          <div class="card-body text-center">
+            投稿した口コミはありません。
+          </div>
+        </div>
+      <% end %>
   </div>
 
 </div>

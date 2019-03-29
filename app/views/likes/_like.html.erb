@@ -2,11 +2,11 @@
   <span class="like">
     <% if post.like?(current_user) %>
       <%= link_to "/likes/#{post.id}", method: :delete, remote: true do %>
-        <span class="fa fa-heart unlike-btn"></span>
+        <span class="fa fa-heart like-btn"></span>
       <% end %>
     <% else %>
       <%= link_to "/likes/#{post.id}", method: :post, remote: true do %>
-        <span class="fa fa-heart like-btn"></span>
+        <span class="fa fa-heart unlike-btn"></span>
       <% end %>
     <% end %>
     <%= post.likes.count %>
