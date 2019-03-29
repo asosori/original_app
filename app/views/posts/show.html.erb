@@ -1,13 +1,14 @@
 <div id="post-<%= @post.id %>" data-post-id="<%= @post.id %>">
-  <h1><%= @post.university %><%= @post.department %><%= @post.major %><%= @post.professor %>研究室(ゼミ)の口コミ</h1>
-  <h2><%= @user.username %>さんによる口コミ</h2>
-  <p><%= @post.detail %></p>
-  <%= render "likes/like", post: @post %>
+  <div class="card mt-5">
+    <div class="card-header">
+      <%= @post.university %><%= @post.department %><%= @post.major %><%= @post.professor %>研究室(ゼミ)の口コミ
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @user.username %>さんによる口コミ</h5>
+      <p class="card-text"><%= @post.detail %></p>
+      <%= render "likes/like", post: @post %><br>
+      <p class="date"><%= @post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+      <%= link_to '戻る', :back, class: "btn btn-secondary mt-3" %> 
+    </div>
+  </div>
 </div>
-
-<%= link_to '戻る', :back %> 
-
-<% if user_signed_in? && current_user == @user %>
-  <%= link_to "投稿を編集する", edit_post_path(@post) %>
-  <%= link_to "投稿を削除する", @post, method: :delete, data: { confirm: "本当に削除しますか?" } %>
-<% end %>

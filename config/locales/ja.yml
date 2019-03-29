@@ -16,6 +16,8 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認欄
+        current_password: 現在のパスワード
+        remember_me: 画面を閉じてもログインしたままにする
       post:
         university: 大学
         department: 学部

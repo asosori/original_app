@@ -1,4 +1,4 @@
-<h1>マイページ</h1>
+<h1 class="title">マイページ</h1>
 <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
 <%= link_to "研究室(ゼミ)の口コミを投稿する", new_post_path %>
 <h2>いいねした口コミ</h2>
@@ -26,4 +26,20 @@
 <% else%>
   <p>投稿した口コミはありません</p>
 <% end %>
+
+<div class="row">
+  <div class="col-3 user-index">
+    <h2 class="title">マイページ</h2>
+    <ul class="nav nav-sidebar">
+      <li>ユーザー情報編集</li>
+      <li>口コミを投稿する</li>
+      <li>いいねした口コミ</li>
+    </ul>
+  </div>
+
+  <div class="col-9">
+    <h2 class="title">自分が投稿した口コミ</h2>
+  </div>
+
+</div>
 
