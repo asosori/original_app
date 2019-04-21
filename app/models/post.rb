@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   validates :professor, presence: true
   validates :detail, presence: true
   belongs_to :user
-  validates_uniqueness_of :user_id
+  validates_uniqueness_of :user_id, { message: "が投稿できる口コミは1つまでです。" }
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
 

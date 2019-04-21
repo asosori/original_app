@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe LikesController, type: :controller do
 
+=begin
   describe "GET #create" do
     it "returns http success" do
       get :create
@@ -15,5 +16,6 @@ RSpec.describe LikesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+=end
 
 end
