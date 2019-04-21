@@ -43,7 +43,7 @@
       </nav>
     </header>
 
-    <div class="container mt-3">
+    <div class="container-fluid mt-3">
       <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= bootstrap_class_for(message_type) %>" >
             <a class="close" data-dismiss="alert" aria-label="Close">×</a>
