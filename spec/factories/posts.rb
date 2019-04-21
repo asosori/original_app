@@ -4,7 +4,7 @@ FactoryBot.define do
     department "工学部"
     major "電子情報工学科"
     professor "舟木剛"
-    sequence(:detail) { |n| "教授はひねくれてます#{n}" }
+    detail "教授はひねくれてます"
     association :user
 
     factory :university_is_nil do
