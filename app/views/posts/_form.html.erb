@@ -1,4 +1,4 @@
-<div class="post-form col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 mb-5 mt-5">
+
   <%= form_with model: @post, local: true do |form| %>
     <%= render "shared/errors", obj: @post %>
 
@@ -31,4 +31,3 @@
   <% end %>
 
   <%= link_to '戻る', :back, class: "btn btn-secondary mt-3" %> 
-</div>

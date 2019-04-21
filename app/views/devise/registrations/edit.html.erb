@@ -1,4 +1,4 @@
-<div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 mb-5 mt-5">
+
   <h2 class="title mb-5">ユーザー情報編集</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -44,5 +44,3 @@
   <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete, class: "btn btn-danger mt-3 mb-3" %>
 
   <%= link_to "戻る", :back, class: "btn btn-secondary mt-3 mb-3" %>
-
-</div>
