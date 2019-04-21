@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
@@ -43,7 +44,7 @@
       </nav>
     </header>
 
-    <div class="container-fluid mt-3">
+    <div class="container mt-3">
       <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= bootstrap_class_for(message_type) %>" >
             <a class="close" data-dismiss="alert" aria-label="Close">×</a>

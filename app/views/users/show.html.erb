@@ -1,7 +1,7 @@
 
   <div class="row">
 
-    <div class="col-lg-4 col-xl-3">
+    <div class="col-lg-4">
       <h1 class="title mypage">マイページ</h1>
       <ul style="list-style:none", class="mt-3">
         <li><%= fa_icon("pencil lg") %> <%= link_to "ユーザー情報を編集", edit_user_registration_path, class: "text-dark ml-2" %></li>
@@ -10,7 +10,7 @@
       </ul>
     </div>
 
-    <div class="col-lg-8 col-xl-9 mt-5">
+    <div class="col-lg-8 mt-5">
       <h2 class="title">自分が投稿した口コミ</h2>
         <% if @post %>
             <div class="card mt-5">
