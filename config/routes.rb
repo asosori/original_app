@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   post "likes/:post_id" => "likes#create"
   delete "likes/:post_id" => "likes#destroy"
 
