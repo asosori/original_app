@@ -13,15 +13,16 @@ class PostsController < ApplicationController
   def search
     if params[:q][:university_cont].empty? && params[:q][:department_cont].empty? && params[:q][:major_cont].empty? && params[:q][:professor_cont].empty?
       flash[:alert] = "検索項目を入力してください"
-      redirect_to root_url
+      redirect_to root_url and return
     else
       @q = Post.ransack(params[:q])
       @posts = @q.result.includes(:user, :like_users, :likes).page(params[:page]).per(10)
       unless @posts.first
         flash.now[:alert] = "該当する口コミは見つかりませんでした"
-        render template: "home/top"
+        render template: "home/top" and return
       end
     end
+    render layout: "second_layout"
   end
 
   def show
