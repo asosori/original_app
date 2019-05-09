@@ -1,24 +1,17 @@
-# README
+大学のゼミ&研究室の口コミサイトです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+使用した機能一覧
 
-Things you may want to cover:
+CRUD処理
+単体テスト(rspec)
+統合テスト(rspec,feature)
+管理者画面
+検索機能
+Ajaxを用いたいいね機能
+deviseを用いたログイン機能
+お問い合わせ機能
+ページネーション機能
+postgresql
+heroku
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+途中からgithub上でissue作ってプルリクをすることでチーム開発を意識しました。
