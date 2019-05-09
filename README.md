@@ -1,29 +1,22 @@
-大学のゼミ&研究室の口コミサイトです。
+# どんなアプリ？
+大学のゼミ&研究室の口コミサイトです。レスポンシブデザインも意識しました。
 
-使用した機能一覧
+# URL
+https://zemilabonavi.herokuapp.com/
 
-CRUD処理
-
-単体テスト(rspec)
-
-統合テスト(rspec,feature)
-
-管理者画面
-
-検索機能
-
-Ajaxを用いたいいね機能
-
-deviseを用いたログイン機能
-
-お問い合わせ機能
-
-ページネーション機能
-
-bootstrap
-
-postgresql
-
-heroku
+# 実装した機能
+- CRUD処理
+- 単体テスト(rspec)
+- 統合テスト(rspec,feature)
+- 管理者画面
+- 検索機能
+- Ajaxを用いたいいね機能
+- deviseを用いたログイン機能
+- お問い合わせ機能
+- ページネーション機能
+- i18nを用いた国際化
+- bootstrap
+- postgresql
+- heroku
 
 途中からgithub上でissue作ってプルリクをすることでチーム開発を意識しました。
