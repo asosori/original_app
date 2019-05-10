@@ -4,7 +4,7 @@
 # URL
 https://zemilabonavi.herokuapp.com/
 
-# 実装した機能
+# 実装した機能など
 - CRUD処理
 - 単体テスト(rspec)
 - 統合テスト(rspec,feature)
@@ -15,6 +15,7 @@ https://zemilabonavi.herokuapp.com/
 - お問い合わせ機能
 - ページネーション機能
 - i18nを用いた国際化
+- 各種バリデーション
 - bootstrap
 - postgresql
 - heroku
