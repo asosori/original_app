@@ -1,4 +1,5 @@
 require 'database_cleaner'
+require 'factory_bot_rails'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

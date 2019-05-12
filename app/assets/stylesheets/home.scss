@@ -4,19 +4,27 @@
 
 .top-page h1{
   text-align: center;
-  //color: white;
+  color: white;
+  padding-top: 50px;
+  text-shadow: 3px 3px 3px #382d2d;
+  font-weight: bold;
 }
 
 .top-page p{
   text-align: center;
   margin-top: 30px;
-  //color: white;
+  color: white;
 }
 
-.top-page{
-  margin-top: 50px;
+.top-page p.description{
+  font-size: 20px;
+  text-shadow: 1px 1px 12px black;
 }
 
 .search-form{
   margin-top: 70px;
+}
+
+p.sampledata{
+  text-shadow: 1px 1px 4px #080808;
 }

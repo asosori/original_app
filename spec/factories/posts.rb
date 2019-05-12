@@ -33,7 +33,7 @@ FactoryBot.define do
     end
 
     factory :hunaki_labo3 do
-      detail "教授が他の研究室の教授よりとにかく厳しいことで有名です"
+      detail "教授が他の研究室の教授よりとにかく厳しいです"
     end
 
     factory :hunaki_labo4 do

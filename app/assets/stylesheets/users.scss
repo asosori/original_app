@@ -6,12 +6,27 @@ h2.title{
   text-align: center;
 }
 
-.text-dark{
+.mypage-menu{
   font-size: 120%;
   line-height: 250%;
+  color: white;
+  text-shadow: 1px 1px 6px black;
+}
+
+.mypage-menu:hover{
+  color: white;
+  text-decoration: none
 }
 
 .mypage{
   border-bottom: 1px solid lightgray;
   padding-bottom: 15px;
+}
+
+.testuser-login{
+  text-align: center;
+}
+
+.icon{
+  color: white;
 }
