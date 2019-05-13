@@ -40,7 +40,7 @@ FactoryBot.define do
       detail "隔週土曜日に研究会という名の進捗発表会があります。"
     end
 
-    factory :takai_labo do
+    factory :tatibana_labo do
       university "早稲田大学"
       department "理工学部"
       major "機械工学科"
@@ -49,7 +49,7 @@ FactoryBot.define do
       association :user
     end
 
-    factory :takai_labo2 do
+    factory :tatibana_labo2 do
       university "早稲田大学"
       department "理工学部"
       major "機械工学科"
