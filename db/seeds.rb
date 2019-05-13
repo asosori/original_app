@@ -55,6 +55,7 @@ User.create!(
     password: "foobar",
     confirmed_at: Time.now
    }
+  ]
 )
 
 User.find(1).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "教授はひねくれてます")
