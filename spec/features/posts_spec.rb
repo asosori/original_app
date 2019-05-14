@@ -76,17 +76,11 @@ RSpec.feature "Posts", type: :feature do
     click_link "ゼミラボナビ"
     fill_in "q[university_cont]", with: "大阪"
     click_button "検索する"
-    #expect{
-      #find(".unlike-btn").click
-    #}.to change(user.likes, :count).by(1) & change(post.likes, :count).by(1)
     find(".unlike-btn").click
     click_link "マイページ"
     click_link "いいねした口コミ"
     expect(page).not_to have_content('いいねした口コミはありません')
     expect(page).to have_content('大阪大学')
-    #expect{
-      #find(".like-btn").click
-    #}.to change(user.likes, :count).by(-1) & change(post.likes, :count).by(-1)
     find(".like-btn").click
     visit current_path
     expect(page).to have_content('いいねした口コミはありません。')
@@ -122,10 +116,6 @@ RSpec.feature "Posts", type: :feature do
     expect(page).to have_content('ホワイト研究室ではなかったです')
 
     click_link "マイページ"
-    #expect{
-      #click_link "削除する"
-      #page.driver.browser.switch_to.alert.accept
-    #}.to change(user.posts.count).by(-1)
     click_link "削除する"
     page.driver.browser.switch_to.alert.accept
     expect(page).to have_content('投稿した口コミはありません')

@@ -4,7 +4,7 @@
       <%= @post.university %>&nbsp;<%= @post.department %>&nbsp;<%= @post.major %>&nbsp;<%= @post.professor %>研究室(ゼミ)の口コミ
     </div>
     <div class="card-body">
-      <h5 class="card-title"><%= @user.username %>さんによる口コミ</h5>
+      <%= show_user_image @post.user %> <span class="card-title"><%= @user.username %>さんによる口コミ</span>
       <p class="card-text"><%= @post.detail %></p>
       <%= render "likes/like", post: @post %><br>
       <p class="date"><%= @post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
