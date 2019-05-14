@@ -58,7 +58,6 @@ User.create!(
   ]
 )
 
-User.find(1).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "教授はひねくれてます")
 User.find(2).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "朝から晩まで研究しないと卒業させてもらえません。")
 User.find(3).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "教授が他の研究室の教授よりとにかく厳しいです")
 User.find(4).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "隔週土曜日に研究会という名の進捗発表会があります。")

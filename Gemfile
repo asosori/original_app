@@ -82,3 +82,5 @@ gem 'ransack'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'activeadmin'
+gem 'mini_magick'
+gem "aws-sdk-s3", require: false

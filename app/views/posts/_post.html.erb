@@ -1,16 +1,16 @@
 <div class="col-md-6">
-<div id="post-<%= post.id %>" data-post-id="<%= post.id %>">
-  <div class="card mt-5">
-    <div class="card-header">
-      <%= post.university %>&nbsp;<%= post.department %>&nbsp;<%= post.major %>&nbsp;<%= post.professor %>研究室(ゼミ)の口コミ
-    </div>
-    <div class="card-body">
-      <h5 class="card-title"><%= post.user.username %>さんによる口コミ</h5>
-      <p class="card-text"><%= post.detail.truncate(100) %></p>
-      <%= render "likes/like", post: post %><br>
-      <p class="date"><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
-      <%= link_to '詳しく見る', post, class: "btn btn-primary mt-3" %> 
+  <div id="post-<%= post.id %>" data-post-id="<%= post.id %>">
+    <div class="card mt-5">
+      <div class="card-header">
+        <%= post.university %>&nbsp;<%= post.department %>&nbsp;<%= post.major %>&nbsp;<%= post.professor %>研究室(ゼミ)の口コミ
+      </div>
+      <div class="card-body">
+        <%= show_user_image post.user %> <span class="card-title"><%= post.user.username %>さんの口コミ</span>
+        <p class="card-text"><%= post.detail.truncate(100) %></p>
+        <%= render "likes/like", post: post %><br>
+        <p class="date"><%= post.created_at.strftime('%Y年%m月%d日') %>投稿</p>
+        <%= link_to '詳しく見る', post, class: "btn btn-primary mt-3" %> 
+      </div>
     </div>
   </div>
-</div>
 </div>
