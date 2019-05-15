@@ -5,10 +5,10 @@
 https://zemilabonavi.herokuapp.com/
 
 # 実装した機能など
-- CRUD処理
 - 単体テスト(rspec,factory)
 - 統合テスト(rspec,factory,feature)
 - 管理者画面
+- 画像投稿機能
 - 検索機能
 - Ajaxを用いたいいね機能
 - deviseを用いたログイン機能
