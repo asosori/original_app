@@ -7,7 +7,8 @@ class InquiriesController < ApplicationController
   def thanks
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.save
-      InquiryMailer.send_mail(@inquiry).deliver_now
+      InquiryMailer.send_mail_me(@inquiry).deliver_now
+      InquiryMailer.send_mail_user(@inquiry).deliver_now
     else
       flash[:danger] = "再度お問い合わせ内容を入力してください"
       redirect_to home_inquiry_url
