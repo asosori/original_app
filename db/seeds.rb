@@ -54,6 +54,18 @@ User.create!(
     email: "test6@example.com",
     password: "foobar",
     confirmed_at: Time.now
+   },
+   {
+    username: "abc7",
+    email: "test7@example.com",
+    password: "foobar",
+    confirmed_at: Time.now
+   },
+   {
+    username: "abc8",
+    email: "test8@example.com",
+    password: "foobar",
+    confirmed_at: Time.now
    }
   ]
 )
@@ -63,9 +75,14 @@ User.find(3).posts.create!(university: "大阪大学", department: "工学部", 
 User.find(4).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "隔週土曜日に研究会という名の進捗発表会があります。")
 User.find(5).posts.create!(university: "早稲田大学", department: "理工学部", major: "機械工学科", professor: "橘", detail: "教授がとても優しくホワイト研究室です")
 User.find(6).posts.create!(university: "早稲田大学", department: "理工学部", major: "機械工学科", professor: "橘", detail: "教授が結構放置気味なので、そんなに研究しなくても卒業できます")
+User.find(7).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "ブラックなので、他大学から編入してきた学生の割合が高いです。")
+User.find(8).posts.create!(university: "大阪大学", department: "工学部", major: "電子情報工学科", professor: "舟木剛", detail: "助教や准教はとても優しくていい人なのですが、教授だけがひねくれてます。")
 
 Like.create(user_id: 1, post_id: 2)
-Like.create(user_id: 1, post_id: 4)
+Like.create(user_id: 1, post_id: 3)
+Like.create(user_id: 1, post_id: 5)
+Like.create(user_id: 1, post_id: 6)
+Like.create(user_id: 1, post_id: 7)
 Like.create(user_id: 3, post_id: 2)
 Like.create(user_id: 4, post_id: 2)
 Like.create(user_id: 2, post_id: 5)

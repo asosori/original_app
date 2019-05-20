@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       redirect_to root_url and return
     else
       @q = Post.ransack(params[:q])
-      @posts = @q.result.includes(:user, :like_users, :likes).page(params[:page]).per(10)
+      @posts = @q.result.includes(:user, :like_users, :likes).page(params[:page]).per(4)
       unless @posts.first
         flash.now[:alert] = "該当する口コミは見つかりませんでした"
         render template: "home/top" and return

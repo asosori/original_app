@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def likes
-    @posts = current_user.like_posts.includes(:user, :like_users, :likes).page(params[:page]).per(10)
+    @posts = current_user.like_posts.includes(:user, :like_users, :likes).page(params[:page]).per(4)
   end
 
 end
