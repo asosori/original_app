@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Posts", type: :feature do
+RSpec.feature "Posts", type: :system do
   
   scenario "simulations of all functions", js: true do
 
@@ -46,7 +46,7 @@ RSpec.feature "Posts", type: :feature do
     expect(page).to have_current_path root_path
     click_link "ログイン"
     expect(page).to have_current_path "/users/sign_in"
-    fill_in "user_email", with: "test1@example.com"
+    fill_in "user_email", with: "test15@example.com"
     fill_in "user_password", with: "foobar"
     click_button "ログイン"
     expect(page).to have_content "ログインしました"
