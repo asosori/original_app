@@ -2,18 +2,19 @@
 大学のゼミ&研究室の口コミサイトです。レスポンシブデザインも意識しました。
 
 # URL
-https://zemilabonavi.herokuapp.com/
+https://zemilabonavi2.herokuapp.com/
 
 # 実装した機能など
+- docker(docker for Mac)
 - 単体テスト(rspec,factory)
-- 統合テスト(rspec,factory,feature)
-- 管理者画面
-- 画像投稿機能
-- 検索機能
+- 統合テスト(rspec,factory,system spec)
+- 管理者画面(Active Admin)
+- 画像投稿機能(Active Storage, AWS S3)
+- 検索機能(ransack)
 - Ajaxを用いたいいね機能
-- deviseを用いたログイン機能
-- お問い合わせ機能
-- ページネーション機能
+- ログイン機能(devise)
+- お問い合わせ機能(mailer)
+- ページネーション機能(kaminari)
 - i18nを用いた国際化
 - 各種バリデーション
 - bootstrap
