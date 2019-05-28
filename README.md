@@ -5,13 +5,13 @@
 https://zemilabonavi2.herokuapp.com/
 
 # 実装した機能など
+- circleCIを使ったCI/CDパイプライン
 - docker(docker for Mac)
-- 単体テスト(rspec,factory)
-- 統合テスト(rspec,factory,system spec)
+- 単体、統合テスト(rspec,factory,system spec)
 - 管理者画面(Active Admin)
 - 画像投稿機能(Active Storage, AWS S3)
 - 検索機能(ransack)
-- Ajaxを用いたいいね機能
+- いいね機能（Ajax)
 - ログイン機能(devise)
 - お問い合わせ機能(mailer)
 - ページネーション機能(kaminari)
