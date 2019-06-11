@@ -4,6 +4,8 @@
 # URL
 https://zemilabonavi2.herokuapp.com/
 
+エラーが出た際は再度更新するか、いったんブラウザを閉じて開きなおすと、ちゃんと表示されます。
+
 # 実装した機能など
 - circleCIを使ったCI/CDパイプライン
 - docker(docker for Mac)
